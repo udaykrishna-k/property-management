@@ -7,8 +7,6 @@ import lombok.Setter;
 @Setter
 public class PropertyDTO {
     private Long id;
-    private String ownerName;
-    private String ownerEmail;
     private String title;
     private String address;
     private Double price;

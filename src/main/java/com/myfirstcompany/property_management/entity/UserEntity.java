@@ -5,16 +5,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
-@Table(name="PROPERTY_TABLE")
+@Table(name = "USER_TABLE")
 @NoArgsConstructor
-public class PropertyEntity {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
-    private String address;
-    private Double price;
+    @Column(name = "OWNER", nullable = false)
+    private String ownerName;
+    @Column(name = "OWNER_EMAIL", nullable = false)
+    private String ownerEmail;
+    private String password;
+    private String phone;
 }
