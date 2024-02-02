@@ -17,4 +17,7 @@ public class PropertyEntity {
     private String title;
     private String address;
     private Double price;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID", nullable = false)
+    private UserEntity userEntity;
 }

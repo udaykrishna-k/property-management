@@ -10,4 +10,5 @@ public class PropertyDTO {
     private String title;
     private String address;
     private Double price;
+    private Long userId;
 }
