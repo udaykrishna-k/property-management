@@ -27,6 +27,14 @@ public class PropertyController {
         List<PropertyDTO> listDTO = propertyService.getAllProperties();
         return new ResponseEntity<List<PropertyDTO>>(listDTO, HttpStatus.OK);
     }
+
+    //    http://localhost:8080/api/v1/properties/{id}
+    @GetMapping("/properties/user/{userId}")
+    public ResponseEntity<List<PropertyDTO>> getAllPropertiesForUser(@PathVariable Long userId){
+        List<PropertyDTO> listDTO = propertyService.getAllPropertiesForUser(userId);
+        return new ResponseEntity<List<PropertyDTO>>(listDTO, HttpStatus.OK);
+    }
+
 //    http://localhost:8080/api/v1/properties/{id}
     @PutMapping("/properties/{id}")
     public ResponseEntity<PropertyDTO> updateProperty(@RequestBody PropertyDTO propertyDTO, @PathVariable Long id){
